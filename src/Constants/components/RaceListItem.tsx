@@ -4,7 +4,7 @@ import { Colors } from '../../Constants/Colors';
 import dayjs from 'dayjs';
 
 import racesResponse from '../../../assets/data/races.json';
-// import { Link } from 'expo-router';
+import { Link } from 'expo-router';
 const races = racesResponse.data.races.response;
 
 export default function RaceListItem({
@@ -15,7 +15,7 @@ export default function RaceListItem({
   round: number;
 }) {
   return (
-    // <Link href={`/race/${item.id}`} asChild>
+    <Link href={`/race/${item.id}`} asChild>
       <Pressable style={styles.itemContainer}>
         <View style={styles.datesContainer}>
           <Text style={styles.date}>
@@ -32,12 +32,12 @@ export default function RaceListItem({
             {/* {item.circuit ? ' - ' + item.circuit.name : ''} */}
           </Text>
           <Text style={styles.description}>
-            Formula 1 {item.competition.name}
+            {item.competition.name}
           </Text>
         </View>
         <Entypo name="chevron-right" size={24} color={Colors.primary} />
       </Pressable>
-    // </Link>
+     </Link>
   );
 }
 
