@@ -3,6 +3,7 @@ import { StyleSheet, FlatList, SafeAreaView, ActivityIndicator } from 'react-nat
 import racesResponse from './assets/data/races.json';
 import { useFonts } from 'expo-font';
 import RaceListItem from './src/Constants/components/RaceListItem';
+import dayjs from 'dayjs';
 
 const races = racesResponse.data.races.response;
 
@@ -19,13 +20,15 @@ export default function App() {
   if(!fontsLoaded){
     return <ActivityIndicator />;
   }
+
+  const sortedRaces = races.sort((r1, r2) => dayjs(r2.date).diff(dayjs(r1.date)));
   
   return (
     <SafeAreaView style={styles.container}>
       <FlatList 
-       data={races}
-       renderItem={({item}) => (
-         <RaceListItem item={item} round={0} />
+       data={sortedRaces}
+       renderItem={({item, index}) => (
+         <RaceListItem item={item} round={sortedRaces.length - index} />
        )}
       />
       <StatusBar style="auto" />

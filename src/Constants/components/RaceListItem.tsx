@@ -19,8 +19,8 @@ export default function RaceListItem({
       <Pressable style={styles.itemContainer}>
         <View style={styles.datesContainer}>
           <Text style={styles.date}>
-            {dayjs(item.date).subtract(2, 'days').format('DD')}-
-            {dayjs(item.date).format('DD')}
+            {dayjs(item.date).subtract(2,'days').format('DD')}
+            -{dayjs(item.date).format('DD')}
           </Text>
           <Text style={styles.month}>{dayjs(item.date).format('MMM')}</Text>
           <Text style={styles.month}>{item.season}</Text>
