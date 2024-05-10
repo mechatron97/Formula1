@@ -28,6 +28,7 @@ export default function RootLayout() {
         }}
       >
         <Stack.Screen name="index" options={{ title: 'Racing' }} />
+        <Stack.Screen name="onboarding" options={{ headerShown: false }} />
       </Stack>
 
       <StatusBar style="light" />

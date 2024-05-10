@@ -5,6 +5,7 @@ import {
   View,
   ActivityIndicator,
   Text,
+  Button,
 } from 'react-native';
 import RaceListItem from '../Constants/components/RaceListItem';
 import dayjs from 'dayjs';
@@ -52,6 +53,12 @@ export default function HomeScreen() {
 
   return (
     <View style={styles.container}>
+      <Link href="/onboarding" asChild>
+      <Button title='Go to Onboarding' />
+      </Link>
+      {/* <Link href="/splash" asChild>
+      <Button title='Go to Splash Screen' />
+      </Link> */}
       <FlatList
         data={sortedRaces}
         renderItem={({ item, index }) => (
