@@ -1,9 +1,6 @@
 import { View, StyleSheet, Pressable, Text, ImageBackground } from "react-native";
 import React, { useState } from "react";
 import { Link, Stack, router } from "expo-router";
-import CustomButton from "../Constants/components/CustomButton";
-import { MaterialIcons } from '@expo/vector-icons';
-import { useNavigation } from "@react-navigation/native";
 import { StatusBar } from "expo-status-bar";
 import { Directions, Gesture, GestureDetector, GestureHandlerRootView } from "react-native-gesture-handler";
 import Animated, { FadeIn, FadeOut, SlideInRight, SlideOutLeft } from "react-native-reanimated";

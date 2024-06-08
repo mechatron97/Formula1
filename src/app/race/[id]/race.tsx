@@ -1,4 +1,4 @@
-import { ActivityIndicator, FlatList, Text } from 'react-native';
+import { ActivityIndicator, FlatList, Text, View } from 'react-native';
 import React from 'react';
 import RankingListItem from '../../../Constants/components/RankingListItem';
 import { useGlobalSearchParams } from 'expo-router';
@@ -43,6 +43,9 @@ const RaceRankings = () => {
       data={raceRankings}
       renderItem={({ item }) => <RankingListItem item={item} />}
     />
+  //   <View>
+  //   <Text>{raceRankings.position}</Text>
+  // </View>
   );
 };
 

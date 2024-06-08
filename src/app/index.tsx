@@ -28,8 +28,7 @@ query MyQuery($season: String, $type: String) {
       }
     }
   }
-}
-`;
+}`;
 
 export default function HomeScreen() {
   const { data, loading, error } = useQuery(query, {
@@ -56,9 +55,9 @@ export default function HomeScreen() {
       <Link href="/onboarding" asChild>
       <Button title='Go to Onboarding' />
       </Link>
-      {/* <Link href="/splash" asChild>
-      <Button title='Go to Splash Screen' />
-      </Link> */}
+      <Link href="/driver" asChild>
+      <Button title='Go to Driver' />
+      </Link>
       <FlatList
         data={sortedRaces}
         renderItem={({ item, index }) => (

@@ -1,6 +1,7 @@
 import { Text, View, StyleSheet, Image } from 'react-native';
 
 import raceRankingResponse from '../../../assets/data/race-rankings.json';
+
 const raceRankings = raceRankingResponse.data.raceRankings.response;
 
 type RankingListItemProps = {
@@ -16,7 +17,6 @@ export default function RankingListItem({ item }: RankingListItemProps) {
         <Text style={styles.name}>{item.driver.name}</Text>
         <Text>{item.team.name}</Text>
       </View>
-
       <Text style={styles.time}>{item.time}</Text>
     </View>
   );
@@ -55,10 +55,8 @@ const styles = StyleSheet.create({
     backgroundColor: 'gainsboro',
     paddingVertical: 3,
     paddingHorizontal: 10,
-
     borderRadius: 10,
     overflow: 'hidden',
-
     color: 'dimgray',
     fontWeight: '500',
     marginTop: 5,

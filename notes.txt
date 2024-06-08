@@ -24,3 +24,15 @@ stepzen import curl --request GET \
 		--name "raceRankings" \
 		--prefix "rank"
 
+#Drivers:
+
+stepzen import curl --request GET \
+	--url 'https://v1.formula-1.api-sports.io/drivers?search=lewi' \
+	--header 'x-rapidapi-host: v1.formula-1.api-sports.io' \
+	--header 'x-rapidapi-key: ef51fcee4d1fafd459377bf89da4b3df' \
+		--query-name "drivers" \
+		--name "drivers" \
+		--prefix "driver"
+
+
+
