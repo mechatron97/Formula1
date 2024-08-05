@@ -1,0 +1,62 @@
+type DriverCountry {
+  code: String
+  name: String
+}
+
+type DriverHighestRaceFinish {
+  number: Int
+  position: Int
+}
+
+type DriverParameters {
+  search: String
+}
+
+type DriverResponseEntry {
+  abbr: String
+  birthdate: Date
+  birthplace: String
+  career_points: Float
+  country: DriverCountry
+  grands_prix_entered: Int
+  highest_grid_position: Int
+  highest_race_finish: DriverHighestRaceFinish
+  id: Int
+  image: String
+  name: String
+  nationality: String
+  number: Int
+  podiums: Int
+  teams: [DriverTeamsEntry]
+  world_championships: Int
+}
+
+type DriverTeam {
+  id: Int
+  logo: String
+  name: String
+}
+
+type DriverTeamsEntry {
+  season: Int
+  team: DriverTeam
+}
+
+type driverRoot {
+  errors: [JSON]
+  get: String
+  parameters: DriverParameters
+  response: [DriverResponseEntry]
+  results: Int
+}
+
+type Query {
+  drivers(search: String, id: Int): driverRoot
+    @rest(
+      endpoint: "https://v1.formula-1.api-sports.io/drivers"
+      headers: [
+        { name: "x-rapidapi-host", value: "v1.formula-1.api-sports.io" }
+        { name: "x-rapidapi-key", value: "ef51fcee4d1fafd459377bf89da4b3df" }
+      ]
+    )
+}

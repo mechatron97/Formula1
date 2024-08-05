@@ -27,8 +27,7 @@ export default function RootLayout() {
           headerTintColor: 'white',
         }}
       >
-        <Stack.Screen name="index" options={{ title: 'Racing' }} />
-        <Stack.Screen name="onboarding" options={{ headerShown: false }} />
+        <Stack.Screen name="index" options={{ headerShown: false }} />
       </Stack>
 
       <StatusBar style="light" />
